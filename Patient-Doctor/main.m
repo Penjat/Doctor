@@ -27,8 +27,14 @@ int main(int argc, const char * argv[]) {
         Patient *brian = [[Patient alloc] initWithName:@"Brian Wilson" andAge:@76];
         Patient *joe = [[Patient alloc] initWithName:@"Joseph Carlson" andAge:@22];
         
+        [joe setHasHealthCard:YES];
+        
         [drBrown seePatient:steve];
         [drBrown requestMedicationForPatient:steve];
+        
+        [drBradlington seePatient:joe];
+        [drBrown requestMedicationForPatient:steve];
+        [drBradlington requestMedicationForPatient:steve];
         
     }
     return 0;

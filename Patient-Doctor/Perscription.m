@@ -10,14 +10,14 @@
 
 @implementation Perscription
 
--(instancetype)initWithPatient:(Patient *)patient doctor:(Doctor *)doctor drugName:(NSString *)drugName timesTakenDaily:(NSNumber*)timesTakenDaily doseInMGs:(NSNumber*)doseInMGs daysTaken:(NSNumber*)daysTaken{
+-(instancetype)initWithPatient:(Patient *)patient drugName:(NSString *)drugName timesTakenDaily:(NSNumber*)timesTakenDaily doseInMGs:(NSNumber*)doseInMGs daysTaken:(NSNumber*)daysTaken{
     
     
     
     self = [super init];
     if (self) {
         _patient = patient;
-        _doctor = doctor;
+        
         _drugName = drugName;
         _timesTakenDaily =timesTakenDaily;
         _doseInMGs = doseInMGs;

@@ -1,3 +1,5 @@
+
+
 //
 //  Doctor.m
 //  Patient-Doctor
@@ -9,8 +11,8 @@
 #import "Doctor.h"
 
 
-@implementation Doctor
 
+@implementation Doctor
 -(instancetype)initWithName:(NSString *)name andSpecialty:(NSString *)specialty andDatabase:(NSMutableSet*)database{
     
     self = [super init];
@@ -21,19 +23,26 @@
     }
     return self;
 }
+
 -(void)seePatient:(Patient *)patient{
     if(patient.hasHealthCard){
         [_acceptedPatients addObject:patient];
+        NSLog(@"patient has health card, adding to accepted patients");
+        return;
     }
+    NSLog(@"patient has no health card.");
 }
 - (Perscription *)requestMedicationForPatient:(Patient *)patient{
     
     if([_acceptedPatients containsObject:patient]){
-        Perscription* perscription = [[Perscription alloc] initWithPatient:patient doctor:self drugName:@"rovexathol" timesTakenDaily:@3 doseInMGs:@75 daysTaken:@14];
+         NSLog(@"patient is on the list of accepted patients, writing prescription");
+        Perscription* perscription = [[Perscription alloc] initWithPatient:patient  drugName:@"rovexathol" timesTakenDaily:@3 doseInMGs:@75 daysTaken:@14];
         
         
         return perscription;
     }
+    NSLog(@"the patient is not on the list, no medication given");
+    
+    return nil;
 }
-
 @end

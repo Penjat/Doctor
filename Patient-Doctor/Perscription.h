@@ -10,14 +10,14 @@
 #import "Patient.h"
 
 
-#import "Doctor.h"
+
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Perscription : NSObject
 
-@property Doctor *doctor;
+
 @property (nonatomic,strong,readonly) NSString *drugName;
 @property (nonatomic,strong,readonly) Patient *patient;
 
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSNumber *doseInMGs;
 @property (nonatomic) NSNumber *daysTaken;
 
--(instancetype)initWithPatient:(Patient*)patient doctor:(Doctor*)doctor drugName:(NSString*)drugName timesTakenDaily:(NSNumber*)timesTakenDaily doseInMGs:(NSNumber*)doseInMGs daysTaken:(NSNumber*)daysTaken;
+-(instancetype)initWithPatient:(Patient*)patient  drugName:(NSString*)drugName timesTakenDaily:(NSNumber*)timesTakenDaily doseInMGs:(NSNumber*)doseInMGs daysTaken:(NSNumber*)daysTaken;
 
 @end
 
